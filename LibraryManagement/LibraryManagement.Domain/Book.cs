@@ -1,8 +1,9 @@
-﻿using LibraryManagement.Core;
+﻿using LibraryManagement.Domain.Common;
+using System;
 
 namespace LibraryManagement.Domain
 {
-    public class Book : AggregateRoot
+    public class Book : Entity
     {
         public string Name { get; private set; }
         public string Isbn { get; private set; }
@@ -36,7 +37,26 @@ namespace LibraryManagement.Domain
             NumberOfPages = numberOfPages;
             NumberOfChapters = numberOfChapters;
             Blurb = blurb;
-            TotalInventory = totalInventory;
         }
+
+        //protected override bool EqualsCore(Book other)
+        //{
+        //    return Name.Trim().ToLower() == other.Name.Trim().ToLower()
+        //        && Author.Trim().ToLower() == other.Author.Trim().ToLower()
+        //        && Isbn.Trim().ToLower() == Isbn.Trim().ToLower()
+        //        && Genre.Name.Trim().ToLower() == other.Genre.Name.Trim().ToLower();
+        //}
+
+        //protected override int GetHashCodeCore()
+        //{
+        //    unchecked
+        //    {
+        //        int hashCode = Name.Trim().Length;
+        //        hashCode = (hashCode * 397) ^ Author.Trim().Length;
+        //        hashCode = (hashCode * 397) ^ Isbn.Trim().Length;
+        //        hashCode = (hashCode * 397) ^ Genre.Name.Trim().Length;
+        //        return hashCode;
+        //    }
+        //}
     }
 }

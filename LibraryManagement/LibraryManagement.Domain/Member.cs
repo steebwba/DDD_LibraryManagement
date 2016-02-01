@@ -1,4 +1,6 @@
-﻿using LibraryManagement.Core;
+﻿
+using LibraryManagement.Domain.Common;
+using System.Collections.Generic;
 
 namespace LibraryManagement.Domain
 {
@@ -7,7 +9,8 @@ namespace LibraryManagement.Domain
         public string Name { get; private set; }
         public string Email { get; private set; }
         public Address Address { get; private set; }
-
+        private IList<BookAllocation> _allocationHistory = new List<BookAllocation>();
+        public IList<BookAllocation> AllocationHistory => _allocationHistory;
         protected Member()
         {
         }
@@ -18,5 +21,6 @@ namespace LibraryManagement.Domain
             Email = email;
             Address = address;
         }       
+
     }
 }

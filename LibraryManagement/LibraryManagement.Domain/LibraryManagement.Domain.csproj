@@ -34,15 +34,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <!-- A reference to the entire .NET Framework is automatically included -->
-    <ProjectReference Include="..\LibraryManagement.Core\LibraryManagement.Core.csproj">
-      <Project>{0ba616dc-f30a-4658-8b50-7ceb9c2beb49}</Project>
-      <Name>LibraryManagement.Core</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Address.cs" />
     <Compile Include="BookAllocation.cs" />
+    <Compile Include="BookStock.cs" />
+    <Compile Include="Common\AggregateRoot.cs" />
+    <Compile Include="Common\Entity.cs" />
+    <Compile Include="Common\ValueObject.cs" />
     <Compile Include="Book.cs" />
     <Compile Include="Branch.cs" />
     <Compile Include="Genre.cs" />

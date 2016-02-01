@@ -1,8 +1,9 @@
-﻿using LibraryManagement.Core;
+﻿using System;
+using LibraryManagement.Domain.Common;
 
 namespace LibraryManagement.Domain
 {
-    public class Address : ValueObject
+    public class Address : ValueObject<Address>
     {
         public string AddressLine1 { get; private set; }
         public string AddressLine2 { get; private set; }
@@ -23,6 +24,30 @@ namespace LibraryManagement.Domain
             City = city;
             County = county;
             PostCode = postCode;
+        }
+
+        protected override bool EqualsCore(Address other)
+        {
+            return AddressLine1.Trim().ToLower() == other.AddressLine1.Trim().ToLower()
+                && AddressLine2.Trim().ToLower() == other.AddressLine2.Trim().ToLower()
+                && AddressLine3.Trim().ToLower() == other.AddressLine3.Trim().ToLower()
+                && City.Trim().ToLower() == other.City.Trim().ToLower()
+                && County.Trim().ToLower() == other.County.Trim().ToLower()
+                && PostCode.Trim().ToLower() == other.PostCode.Trim().ToLower();
+        }
+
+        protected override int GetHashCodeCore()
+        {
+            unchecked {
+                int hashCode = AddressLine1.Trim().Length;
+                hashCode = (hashCode * 397) ^ AddressLine2.Trim().Length;
+                hashCode = (hashCode * 397) ^ AddressLine3.Trim().Length;
+                hashCode = (hashCode * 397) ^ City.Trim().Length;
+                hashCode = (hashCode * 397) ^ County.Trim().Length;
+                hashCode = (hashCode * 397) ^ PostCode.Trim().Length;
+
+                return hashCode;
+            }
         }
     }
 }

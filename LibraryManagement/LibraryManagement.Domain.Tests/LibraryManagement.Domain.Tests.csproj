@@ -90,6 +90,10 @@
       <Project>{e00946c1-10e0-4710-b91d-c409630528b1}</Project>
       <Name>LibraryManagement.Domain</Name>
     </ProjectReference>
+    <ProjectReference Include="..\LibraryManagement.Shared\LibraryManagement.Shared.csproj">
+      <Project>{d95a8d2d-fff2-4007-acf1-9d0b8382607f}</Project>
+      <Name>LibraryManagement.Shared</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

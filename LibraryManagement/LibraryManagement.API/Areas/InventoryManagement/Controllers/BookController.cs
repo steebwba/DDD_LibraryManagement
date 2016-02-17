@@ -1,5 +1,5 @@
 ﻿using LibraryManagement.Domain;
-using LibraryManagement.Domain.InventoryMangement.DTO;
+//using LibraryManagement.Domain.InventoryMangement.DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,9 +12,9 @@ namespace LibraryManagement.API.Areas.InventoryManagement.Controllers
     public class BookController : ApiController
     {
         //api/InventoryManagement/Book
-        public void Post(BookDTO book, int quantity)
-        {
-            //var bookItem = new Book(book.Name, book.Isbn, )
-        }
+        //public void Post(BookDTO book, int quantity)
+        //{
+        //    //var bookItem = new Book(book.Name, book.Isbn, )
+        //}
     }
 }

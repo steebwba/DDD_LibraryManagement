@@ -1,11 +1,11 @@
 ﻿using LibraryManagement.Shared;
 using System;
 
-namespace LibraryManagement.Domain
+namespace LibraryManagement.Membership.Domain
 {
-    public class BookAllocation : Entity
+    public class AllocationHistory : Entity
     {
-        public Guid MemberId { get; private set; }
+        public Guid BranchId { get; private set; }
 
         /// <summary>
         /// Gets the book identifier.
@@ -31,19 +31,19 @@ namespace LibraryManagement.Domain
         /// </value>
         public DateTime? ReturnedOn { get; private set; }
 
-        protected BookAllocation() { }
+        protected AllocationHistory() { }
 
-        public BookAllocation(Guid memberId, Guid bookId, DateTime allocatedOn, DateTime? returnedOn)
+        public AllocationHistory(Guid branchId, Guid bookId, DateTime allocatedOn, DateTime? returnedOn)
         {
-            MemberId = memberId;
+            BranchId = branchId;
             BookId = bookId;
             AllocatedOn = allocatedOn;
             ReturnedOn = returnedOn;
         }
 
-        public BookAllocation(Guid memberId, Guid bookId, DateTime allocatedOn)
+        public AllocationHistory(Guid branchId, Guid bookId, DateTime allocatedOn)
         {
-            MemberId = memberId;
+            BranchId = branchId;
             BookId = bookId;
             AllocatedOn = allocatedOn;
         }

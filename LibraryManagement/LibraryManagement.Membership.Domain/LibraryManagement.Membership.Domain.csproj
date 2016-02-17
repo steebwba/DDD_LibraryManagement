@@ -5,11 +5,11 @@
     <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E00946C1-10E0-4710-B91D-C409630528B1}</ProjectGuid>
+    <ProjectGuid>{0DF11533-5435-4C08-91C6-13EC782B77DD}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>LibraryManagement.Domain</RootNamespace>
-    <AssemblyName>LibraryManagement.Domain</AssemblyName>
+    <RootNamespace>LibraryManagement.Membership.Domain</RootNamespace>
+    <AssemblyName>LibraryManagement.Membership.Domain</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -34,18 +34,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="BookAllocation.cs" />
-    <Compile Include="BookInventory.cs" />
-    <Compile Include="Book.cs" />
-    <Compile Include="Branch.cs" />
-    <Compile Include="Genre.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
+    <!-- A reference to the entire .NET Framework is automatically included -->
     <ProjectReference Include="..\LibraryManagement.Shared\LibraryManagement.Shared.csproj">
       <Project>{d95a8d2d-fff2-4007-acf1-9d0b8382607f}</Project>
       <Name>LibraryManagement.Shared</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AllocationHistory.cs" />
+    <Compile Include="Member.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

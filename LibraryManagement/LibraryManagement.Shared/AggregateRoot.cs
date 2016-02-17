@@ -1,4 +1,4 @@
-﻿namespace LibraryManagement.Domain.Common
+﻿namespace LibraryManagement.Shared
 {
     public class AggregateRoot : Entity
     {

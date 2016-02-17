@@ -1,7 +1,4 @@
-﻿using System;
-using LibraryManagement.Domain.Common;
-
-namespace LibraryManagement.Domain
+﻿namespace LibraryManagement.Shared
 {
     public class Address : ValueObject<Address>
     {

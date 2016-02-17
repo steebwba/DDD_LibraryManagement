@@ -1,4 +1,4 @@
-﻿namespace LibraryManagement.Domain.Common
+﻿namespace LibraryManagement.Shared
 {
     public abstract class ValueObject<T> where T : ValueObject<T>
     {
